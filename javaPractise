@@ -1,0 +1,757 @@
+// in-line comment
+/** how to do a 
+multiline comment */
+
+// Data types in javascript
+/* These are:
+- undefined
+- null --> nothing
+- boolean --> true or false
+- string
+- number
+- object --> stores key:value pairs */ 
+
+// Ways to declare a variable
+// Using var --> can be used all through the program
+//var myName = "Kite";
+
+// Using let --> only used within the scope of where you declare that
+//let ourGroup = "Silicon Hill";
+
+// using const --> it's a variable that never changes
+//const ourAim = "Help the world";
+
+
+//--> Storing values with assignment operators
+/**
+ * There is a difference between assigning a variable and declaring a variable
+ eg var a; -> is how you declare a variable
+    var b = 3; ->is how you assign a variable
+ */
+
+
+
+//--> Initializing variables
+/**
+ * It is done by =sign eg. var a = 7;
+ --> Uninitailized variables 
+ eg. var a;
+     var b; etc
+ * Variable names and function names in javascript are case sensitive
+     eg. a declaration:  var StudySmart; should be assigned just as it is typed for it to run correctly
+     - The declaration StudySmart is not same as an assignment StuDySmart = "__"
+ * mostly use a camel case 
+     - eg. studySmarterEveryday
+ * Increamenting a varible means adding one to it
+     - jut use ++ to increament and -- to decreament
+
+ */
+
+
+// Compound assignment with Augmented addition
+/**
+ * instead of typing a = a + 3 
+ * just type  a += 3 
+ * This  applies to multiplication,divison and subtraction
+ */
+
+// Escape sequences in strings
+/**
+  \' - to escape the double quotes
+  \" - to escape doble quote
+  \\ - escape backslash
+  \n - newline
+  \r - carrige return
+  \t - tsb
+  \b - backspace
+  \f - formfeed
+ */
+
+
+// Appending variables to string
+/**
+ * var anAdjective = "awesome!";
+ * var ourstr = "Captain you are ";
+ * ourStr += anAdjective;
+ */
+
+// Finding length of a string
+/**
+ * use the .length property
+ * 
+ */
+
+
+// var a;
+// var b = 4;
+// a = 7;
+// b = a;
+// a += 3;
+// b -= 20;
+// myStr = "This is\" smart \"of you ";
+// // console.log(b) // To show output   
+// strLength = myStr.length;
+
+// Bracket notion to find nth charater of a string or element in an array or a list
+/**
+ * use []
+ * inside put the index of the character
+ * the 1st character is always index zero 
+ * To find the the nth character use [n-1] 
+ * To find the last character [-1]
+ * To find nth to last character [myStr.length-n]
+ * To find an element in an array of array [][]
+ */
+
+
+// ARRAYS
+/**
+ * Arrays  are stored in [] separated by a comma(,)
+ * for example, varcmy Array = ["Kite",24,True,3.5343];
+ * Arrays store all datatypes
+ * --> NESTED ARRAYS (Also multidimensional array
+ * - it is when an element in an array is another array
+  ie. [["s1",34],[True,45],[4.56,7]]
+
+ * You can use push() to append data to an array
+ ourArray.push(["me", "you",200]) -
+
+ * You can use pop() to remove last data to an array
+ ourArray.pop(["me", "you",200.etc])
+
+ * You can use shift() and unshift() to remove and add first data to an array
+ */
+
+// FUNCTIONS
+/**
+ * They allow us to write reusable code
+ * 
+ */
+
+// function myFirstFunction() {
+//     console.log();
+// }
+
+// myFirstFunction();
+
+// Using parameters
+/**
+ * parameters act as place holders for the values that are to be input
+  to a function when it is called
+ * 
+ */
+
+// function subTwoNubers(a,b) {
+//     console.log(a-b);
+// }
+
+// subTwoNubers(2,1);
+
+// GLOBAL SCOPE AND FUNCTIONS
+/**
+ * Scope refers to visibility of variables
+ * variables which are defined outside a function have global scope which means it can be seen everywhere in your javascript 
+ * Variables declared within a function have a local scope
+ *  When both a local and a global variables have the same name, the local variable takes precedence over the global variable
+ * 
+*/
+
+// function myLocalScope(){
+//     var myLocalVar = 20;
+//     console.log(myLocalVar);
+// }
+// myLocalScope();
+
+// function plusOne(num){
+//     return num + 1
+// }
+
+// console.log(plusOne(50))
+
+
+function testEqual(a,b) {
+    if (a === b){
+        return "They are equal";
+    }
+    return "Not equal";
+
+}
+// console.log(testEqual(5,5))
+
+// Strict equal operator (===)
+// Logucal operatorv(< , >) , logical or (||)
+
+function grade(marks) {
+    if (marks >= 90){
+        return "Excellent";
+    } 
+    else if (marks >= 80) {
+        return "Very good";
+    } 
+    else if (marks >= 60) {
+        return "good";
+    }
+    return "You are a failure";
+}
+// console.log(grade(50))
+
+//Nested if
+
+function middleAge(age){
+    if (age >=30 && age <=50){
+        return "How is life at work?";
+    }
+    if (age < 30){
+        return "Prepare for your future kid";
+    }
+    return "Ho-ho-ho! time's up";
+}
+// console.log(middleAge(40))
+
+// SWITCH STATEMENTS --> tests a value and can have many key statement which define various possible values
+function caseInSwitch(val) {
+    var answer = "";
+    switch(val){
+        case 1:
+            answer = "alpha";
+            break;
+        case 2:
+            answer = "Beta";
+            break;
+        case 3:
+            answer = "Gamma";
+            break;
+        case 4:
+        case 5: // Default option of switch statement
+            answer = "Delta";
+            break;
+        default:
+            answer = "Versions"
+    }
+    return answer;
+
+}
+//console.log(caseInSwitch(5))
+
+// Returning boolean values 
+function trueOrFalse(a,b) {
+    console.log(a < b); 
+}
+trueOrFalse(1,2)
+
+// Returning early pattern from functions
+function abTest(a,b) {
+    if (a <= 0 || b <= 0) {
+        return undefined;
+    }
+    return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+// console.log(abTest(0,0))
+
+// Counting cards
+var count = 0;
+function cc(card) {
+    switch(card) {
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            count+=1;
+            break
+        case 10:
+        case "J":
+        case "Q":       
+        case "K":
+            count -=1;
+            break
+     }
+     var holdbet = "hold";
+     if(count > 0) {
+         holdbet = "Bet";
+     }
+     return count + " " + holdbet;
+};
+// console.log(cc(2))
+
+// JAVASCRIPT OBJECTS object = property(key:value)
+var myDog = {
+    "name": "Skippy",
+    "age": 3,
+    "height": 0.5,
+    "friends": ["rhoomba","cats"],
+    "favourite food":"Ugali and bone soup"
+};
+// console.log(myDog.friends)
+// console.log(myDog["favourite food"])
+
+// myDog.name = "Scooby" 
+// myDog["Bark"] = "Boom! Boom!"
+// console.log(myDog)
+// delete myDog.age
+// console.log(myDog)
+
+// Using objects for lookup
+// Whenever there are spaces in the key, use bracket notation for lookup
+
+function myLookup(val) {
+    var results = "";
+    var lookup = {
+        1:"one",
+        2:"two",
+        3:"three",
+        4:"four",
+        5:"five",
+    };
+    results = lookup[val]
+    return results
+};
+// console.log(myLookup(3))
+
+function checkProperty(property) {
+    if (myDog.hasOwnProperty(property)) {
+        return myDog[property];
+    }
+    return "not found!";
+}
+// console.log(checkProperty("age"))
+
+// Accessing nested objects
+var myCars = [{
+    type:"sedan",
+    brand:[
+        "toyota",
+        "Mercedes",
+        "Nissan"
+    ]},
+    {
+        type: "SUV",
+        brand: [
+            "Volks Wagen",
+            "Prado",
+            "Audi"
+        ]
+    }
+]
+
+// console.log(myCars[1].brand[2])
+
+// Record collection
+
+var collection = {
+    "2345": {
+        "album": "sleeping all day",
+        "artist": "Bon Jovi",
+        "tracks": ["Stay all night", "Regrets Next Day"]
+    },
+    "3345": {
+        "album": "sleeping  day",
+        "artist": "Bon Voya",
+        "tracks": ["Stay  night", "Regret Next"]    
+
+    },
+    "2445": {
+        "album": "all day",
+        "artist": "Don Mark",
+        "tracks": ["all night", "Regret Day"]
+    },
+    "2385": {
+        "album": "all day long",
+        "artist": "lawi dan",
+        "tracks": ["Stay all ", "Next Day"]
+    }
+}
+
+// Keeping a copy of an object
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+function updateCollection(id, property, value) {
+    if (value ==="") {
+        delete collection[id][property];
+    } else if (property === "tracks") {
+        collection[id][property] = collection[id][property] || [];
+        collection[id][property].push[value];       
+    } else {
+        collection[id][property] = value;
+    } 
+    return collection;
+}
+
+
+// updateCollection(2445,"album", "Already woke")
+// console.log(updateCollection(2345,"artist","obert"))
+
+//function addToCollection(id)
+
+
+// ITERATING WITH WHILE LOOP
+var myArray = [];
+
+var i = 0
+while (i < 5) {
+    myArray.push(i);
+    i ++
+}
+
+// console.log(myArray)
+
+// FOR LOOP (initialization, condition, operation)
+var ourArray = [];
+
+// for (var i = 10; i > 4; i-- ) {
+//     ourArray.push(i)
+// }
+// console.log(ourArray)
+
+for (var i = 20; i>0; i--) {
+    ourArray.push(i);
+}
+// console.log(ourArray)
+
+var myNumber = [1,2,3,4,5,6,7,4,5,3,3,55,5,3,6,3,6,3,6,2,4,6];
+var total = 0;
+for (i=0; i < myNumber.length; i++  ) {
+    total += myNumber[i];
+}
+// console.log(total)
+
+// nested for loops
+ function multiplyAll(arr) {
+     var product = 1;
+     for (var i=0; i < arr.length; i++) {
+         for (j=0; j < arr[i].length; j++) {
+             product *= arr[i][j];
+         }
+     }
+     return product;
+ }
+
+ var product = multiplyAll([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
+ // console.log(product)
+
+ // Do...while loops -- runs at least one time before it checks the condition
+
+ var myArray = [];
+ var i = 10;
+ 
+ do {
+     myArray.push(i);
+     i++;
+ } while (i < 5)
+// console.log(i , myArray)
+
+// PRACTISE CHALLENGE
+
+// PROFILE LOOKUP
+const contacts =[
+    {
+        "firstName": "Kite",
+        "lastName": "Eugine",
+        "number": "0731451988",
+        "likes":["coding","comedy","piano"]
+    },
+    {
+        "firstName": "Captain",
+        "lastName": "In",
+        "number": "0114338374",
+        "likes": ["Reading","Watching Youtube","Technology"]
+    },
+    {
+        "firstName": "Mary",
+        "lastName": "Lynne",
+        "number": "0714448932",
+        "likes": ["Programming","Her boyfriend", "Telenovelas"]
+    },
+    {
+        "firstName": "An",
+        "lastName": "Mutuku",
+        "number": "0111135674",
+        "likes": ["music","cooking","Exercising"]
+    },
+    {
+        "firstName": "Kail",
+        "lastName": "Ken",
+        "number": "073787473",
+        "likes": ["Eating","Flying","Farming"]
+    }
+]
+
+function lookUpProfile(name, prop) {
+    for (var i = 0; i < contacts.length; i++){
+        if (contacts[i].firstName == name) {
+            return contacts[i][prop] || "No such property";
+        }
+        else if (contacts[i].lastName == name) {
+            return contacts[i][prop] || "No such property";
+        }
+    }
+    return "No such contact!!"
+
+}
+
+var data = lookUpProfile("Kail","likes")
+// console.log(data)
+
+// GENERATING RANDOM FRACTIONS
+var randomNumber = Math.floor(Math.random() *20);
+function randomFunction() {
+    return Math.random();
+}
+// console.log(randomFunction())
+// console.log(randomNumber)  
+
+function randomRange(myMin,myMax) {
+    return Math.floor(Math.random() *(myMax-myMin) + myMin)
+}
+// console.log(randomRange(50,100))
+
+// parseInt function
+function convertToInteger(str){
+    return parseInt(str);
+}
+// console.log(convertToInteger("212")
+
+// parseInt function with radix (radix specifies the base number of the string)
+
+function convertBinaryToInt(str) {
+    return parseInt(str,10);
+}
+
+
+// ternary operator
+function checkEqual(a,b) {
+    return a===b ? "they are equal" : "they are not" ;
+}
+// console.log(checkEqual(11,11))
+
+// console.log(checkSign(12))
+function checkSign(num) {
+    return num > 0 ? "positive": num < 0 ? "negative" : "zero"; // nested ternary operators
+}
+
+// preventing mutations
+
+function freezeObj() {
+    "use strict";
+    const MATH_CONSTANTS = {
+        PI: 3.142
+    };
+    Object.freeze(MATH_CONSTANTS);
+    // try {
+    //     MATH_CONSTANTS.PI = 99;
+    // } catch (ex) {
+    //     console.log(ex);
+    // }
+    // return MATH_CONSTANTS.PI
+}
+const PI = freezeObj();
+// console.log(PI);
+
+// using arrow functions
+var myConcat = function(arr1,arr2) {
+    return arr1.concat(arr2)
+}
+// console.log(myConcat([1,2],[3,4]))
+
+var strConcat = (str1,str2) => str1.concat(str2);
+// console.log("Incaptain","is an upcoming store!") 
+
+// Higher order arrow function
+const increment = (function() {
+    return function increment (num, val=1) {
+        return num + val;
+    }
+})();
+// console.log(increment(10,2))
+// console.log(increment(10))
+
+// rest operator
+const sum =(function(){
+    return function sum (...args) {
+        return args.reduce((a,b) => a + b, 0 );
+    };
+})(); 
+// console.log(sum(1,2,3,4));
+
+// Using destructuring assignment to assign variables from objects
+var voxel = {x: 3.6,y: 7.4, z:6.54 };
+var x = voxel.x;
+var y = voxel.y;
+var z = voxel.z;
+
+const{e: a,f: b,g: c} = voxel;
+
+const AVG_TEMP = {
+    today: 27,
+    tomorrow: 23
+};
+function getTempOfTomorrow(avgTempratures) {
+    "use strict";
+    const{tomorrow : tempOfTomorrow} = avgTempratures
+    return tempOfTomorrow
+}
+// console.log(getTempOfTomorrow(AVG_TEMP))
+
+//Destructuring assignment with nested objects
+const LOCAL_FORECAST = {
+    today: {min: 72, max: 83},
+    tomorrow: {min: 70,max: 80}
+};
+function getMaxOfTomorrow(forecast) {
+    "use strict";
+    const {tomorrow: {max: maxOfTomorrow}} = forecast;
+    return maxOfTomorrow;
+}
+// console.log(getMaxOfTomorrow(LOCAL_FORECAST))
+// Using destructuring assignment to assign variables from arrays
+const [e,f,,g] = [1,2,3,4,5,6]
+// console.log(e,f,g)
+
+
+let k=8, l=6;
+(() => {
+    "use strict";
+    [k,l] = [k,l]
+})();
+// console.log(k);
+// console.log(l);
+
+
+// Using Destructuring assignment with the rest operator[...] --> three dots
+
+const source = [1,2,3,4,5,6,7,8,9]
+ function removeFirstTwo(list) {
+     const [ , , ...arr] = list;
+     return arr;
+ }
+const arr = removeFirstTwo(source)
+ console.log(arr);
+console.log(source);
+
+// using destructuring assignment to pass an object as a function's parameters
+// It's commonly used with api calls
+const stats = {
+    max: 56.78,
+    std_deviation:4.34,
+    median: 34.54,
+    mode: 23.87,
+    avg: 35.85,
+    min: -6.78
+};
+const half = (function(){
+    return function half({max,min}) {
+        return (max + min)/ 2.0;
+    }
+})();
+// console.log(stats);
+// console.log(half(stats));
+
+// Creatin a string using template literals(``)
+// Template literals are special  types of strings that makes creating complex strings easier
+const person = {
+    name: "Zodiac Hasbro",
+    age: 26
+};
+
+const greetings = `hello, my name is ${person.name}.
+I am ${person.age} years old. `;
+console.log(greetings)
+
+const result = {
+    success: ["max-length","no-amd","prefer-arrow-functions"],
+    failure: ["no-var","var-on-top","linebreak"],
+    skipped: ["id-blacklist","no-dup-keys"]
+};
+function makeList(arr) {
+    const resultDisplayArray = []
+        for (let i=0; i < arr.length; i++) {
+            resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`)
+
+        }
+
+
+    return resultDisplayArray;
+}
+
+const resultDisplayArray = makeList(result.failure);
+// console.log(resultDisplayArray)
+
+
+// Writing concise object literal with declarations using simple fields
+const createPerson = (name, age, gender) => {
+    return {
+        name: name,
+        age: age,
+        gender: gender
+    };
+};
+
+// console.log(createPerson("kite",22,"male"))
+// or
+const createAnotherPerson = (name,age,gender) =>({name,age,gender});
+// console.log(createAnotherPerson("Eugine",27,"Male"));
+
+// using class constructor to define a consstructor function
+class spaceShuttle {
+    constructor(targetPlanet) {
+       this.targetPlanet = targetPlanet;  
+    }
+};
+var zeus = new spaceShuttle("jupiter");
+console.log(zeus.targetPlanet)
+
+
+function makeClass() {
+    class vegetable {
+        constructor(name) {
+            this.name = name;
+        }
+    }
+    return vegetable;
+}
+const vegetable = makeClass();
+const carrot = new vegetable('carrot');
+console.log(carrot.name);
+
+// using setters and getters to control acces to objects
+class book {
+    constructor(author) {
+        return this._author;
+    }
+    // getter
+    get writer() {
+        return this._author;
+    }
+    // setter
+    set writer(updatedAuthor) {
+        this._author = updatedAuthor
+    }
+}
+function makeClass() {
+    class thermostat {
+        constructor(temp) {
+            this._temp = 5/9 *(temp-32)
+        }
+        get temprature() {
+            return this._temp;
+        }
+        set temprature(updatedTemp) {
+            this._temp = updatedTemp;
+        }
+    }
+    return thermostat;
+}
+const thermostat = makeClass();
+const thermos = new thermostat(76)
+let temp =thermos.temperature;
+thermos.temprature = 26;
+temp = thermos.temprature;
+console.log(temp);
+
+
+
+
+
+
+
+
