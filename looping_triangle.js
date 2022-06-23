@@ -32,7 +32,7 @@ do {
     pattern3 += "#";
     count += 1
 } while ( count < 7)
-// function makeTriangle(){
-//     Pass
-// }
-// makeTriangle()
+function makeTriangle(){
+    Pass
+}
+makeTriangle()
