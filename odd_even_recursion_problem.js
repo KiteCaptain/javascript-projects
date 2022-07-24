@@ -29,7 +29,6 @@ function isEven(positive_number){
 
 console.log(isEven(-1))
 
-/*
 // Recursive code
 function isEven(n) {
     if (n == 0) return true;
@@ -37,4 +36,4 @@ function isEven(n) {
     else if (n < 0) return isEven(-n);
     else return isEven(n - 2);
   }
-*/
+console.log(isEven(2))
