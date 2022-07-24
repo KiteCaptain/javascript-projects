@@ -13,7 +13,7 @@ const square = function (x) {
 
 // Arrow function
 const addition = x => { return x+x}
-console.log(addition(4))
+// console.log(addition(4))
 
 const power = function(base, exponent ) {
     result = base**exponent 
@@ -57,7 +57,7 @@ function findSolution(target) {
     }
     return find(1, "1");
 }
-console.log(findSolution(24)); // -> (((1 * 3) + 5) * 3)
+// console.log(findSolution(24)); // -> (((1 * 3) + 5) * 3)
 
 /* The inner function find does the actual recursing. It takes two arguments: the current number and a string that records how we reached this
 number. If it finds a solution, it returns a string that shows how to get to the
@@ -119,7 +119,7 @@ function printFarmInventory (cows, chickens, pigs){
     console.log(`${zeroPad(pigs, 3)} Pigs`)
 }
 
-printFarmInventory(3,4,28)
+// printFarmInventory(3,4,28)
 
 /*
 Write a function min that takes two arguments and returns
@@ -128,6 +128,22 @@ their minimum.
 function minimum(a,b) {
     return console.log(Math.min(a,b));
 }
-minimum(12, 400)
+// minimum(12, 400)
 
+
+
+// Example of arrow functions
+
+function repeat(n, action) {
+    for (let i = 0; i < n; i++) {
+        action(i);
+    }
+}
+
+let labels = [];
+repeat(5, i => {
+    labels.push(`unit ${i + 1}`)
+})
+
+console.log(labels);
 
