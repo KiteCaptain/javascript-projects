@@ -179,7 +179,7 @@ function testEqual(a,b) {
 // console.log(testEqual(5,5))
 
 // Strict equal operator (===)
-// Logucal operatorv(< , >) , logical or (||)
+// Logical operator(< , >) , logical or (||)
 
 function grade(marks) {
     if (marks >= 90){
