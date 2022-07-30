@@ -19,3 +19,11 @@ function findGreater(a, b) {
 function findGreater(a, b) {
     return a > b ? "a is greater" : "b is greater or equal";
   }
+
+
+// Ternary operators can also be chained
+function findGreaterOrEqual(a, b) {
+return (a === b) ? "a and b are equal" 
+    : (a > b) ? "a is greater" 
+    : "b is greater";
+}
