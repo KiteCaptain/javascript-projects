@@ -13,3 +13,5 @@ function addTwoNums(a,b) {
     }
 }
 addTwoNums(12,"30")
+
+console.log("The program continues")
