@@ -81,6 +81,11 @@ function count(...food) {
 count("Burgers", "Fries", null, undefined, Number, String, BigInt); // returns 7
 */
 
-const letter = "a"
-letter = "b"
+
+var result;
+console.log(result);
+result = 7;
+console.log(result)
+
+
 
