@@ -73,9 +73,14 @@ let [a, b] = [1,2,3,4,5]
 console.log(b) // return 2
  */
 
-
+/**
 function count(...food) {
   console.log(food.length)
 }
 
 count("Burgers", "Fries", null, undefined, Number, String, BigInt); // returns 7
+*/
+
+const letter = "a"
+letter = "b"
+
