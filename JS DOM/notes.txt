@@ -10,7 +10,6 @@ document.getElementById("id")       Find an element by id name
 document.getElementsByTagName       Find an element by tag name
 document.getElementsByClassName     Find an elemnent by class name
 
-
 Changing HTML elements
 ``````````````````````
 Property                                        Description
