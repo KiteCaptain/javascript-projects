@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Javascript animation</title>
+</head>
+<body style="background-color: rgb(77, 77, 77);">
+    <canvas  width="800" height="800" id="myCanvas"></canvas>
+
+    <script src="shreddedImage.js"></script>
+    <script>
+        const myCanvas = document.getElementById("myCanvas")
+        const ctx = myCanvas.getContext("2d")
+        const { width, height } = myCanvas
+        const imgWidth = width / 2
+        const shredSize = 1;
+
+        const shreddedImages = [];
+        const img = new Image()
+        img.src = "profile_photo.jpg"
+        img.onload = () => {
+            const ar = img.width / img.height
+            const imgHeight = imgWidth / ar
+            shreddedImages.push(new ShreddedImage(img, imgWidth, imgHeight, shredSize))
+            shreddedImages.push(new ShreddedImage(img, imgWidth, imgHeight, shredSize, 1))
+            
+            animate()
+        }
+
+        const up = 0;
+        const down = 400;
+        const left = 0;
+
+        const keys = [
+            [
+                {x: left, y: up, spread: 1},
+                {x: left + shredSize, y: up, spread: 1}
+            ],
+            [
+                {x: left, y: up, spread: 1},
+                {x: left + shredSize, y: up, spread: 1}
+            ],
+            [
+                {x: left, y: up, spread: 1},
+                {x: left + shredSize, y: down, spread: 1}
+            ],
+            [
+                {x: left, y: up, spread: 0},
+                {x: left , y: down, spread: 0}
+            ],
+            [
+                {x: left, y: up, spread: 0},
+                {x: left , y: down, spread: 0}
+            ],
+            [
+                {x: left, y: up, spread: 1},
+                {x: left + shredSize, y: down, spread: 1}
+            ],
+        ]
+
+        let frameCount = 0;
+        function animate() {
+            frameCount ++;
+            const iFrames = 100;
+            const key = Math.floor(frameCount / iFrames) % keys.length;
+            const nextKey = (key + 1) % keys.length;
+            const t = (frameCount % iFrames) / iFrames;
+            const e = 0.5 - Math.cos(t * Math.PI) * 0.5
+
+            ctx.clearRect(0, 0, width, height);
+            shreddedImages.forEach((img, index) => {
+                const x = lerp(keys[key][index].x, keys[nextKey][index].x, e);
+                const y = lerp(keys[key][index].y, keys[nextKey][index].y, e);
+                const spread = lerp(keys[key][index].spread, keys[nextKey][index].spread, e);
+                img.draw(ctx, x, y, spread)
+            })
+
+            requestAnimationFrame(animate);
+        }
+
+        function lerp(a, b, t) {
+            return a + (b - a) * t
+        }
+    </script>
+    
+</body>
+</html>
